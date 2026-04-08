@@ -1,0 +1,218 @@
+:root {
+      --primary: #e91e63;
+      --gradient: linear-gradient(90deg, #dc428f, #f87b5a);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+  
+    }
+
+    .navbar {
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1rem 0;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      margin: 0 12px;
+    }
+
+    .nav-link:hover {
+      color: #ff6b00 !important;
+    }
+
+    .nav-link.active {
+      color: #e91e63 !important;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a 60%, #1a0033 100%);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #ddd;
+      max-width: 520px;
+    }
+
+    .btn-signup {
+      background: var(--gradient);
+      color: white;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+
+    .btn-signup:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+    }
+
+    .crypto-graphic {
+      position: relative;
+      z-index: 2;
+    }
+
+    .arrow-up {
+      font-size: 180px;
+      color: #ff9800;
+      filter: drop-shadow(0 10px 20px rgba(255, 152, 0, 0.5));
+    }
+
+
+    /*forms */
+#signupForm .form-control {
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 16px;
+  padding: 10px 14px;
+  height: auto;
+}
+
+#signupForm .form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+#signupForm .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: white;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* Butoni */
+#signupForm button {
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+#signupForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.trust-logo {
+  background: #f8f9fa;
+  padding: 18px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.trust-logo.binance {
+  background: #000;
+  color: #f3ba2f;
+}
+
+.trust-logo.nansen {
+  background: #000;
+  color: #00ff9d;
+}
+
+.guarantee-image-box {
+  background: linear-gradient(135deg, #1a1a1a, #3a1a2e);
+  border-radius: 20px;
+  padding: 25px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  min-height: 160px;
+}
+
+.guarantee-image-box img {
+  max-height: 150px;
+  width: auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+.list-unstyled li{
+    font-size: 20px;
+}
+
+/* ==================== REGISTER NOW SECTION ==================== */
+.register-section .form-control {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 14px 18px;
+  font-size: 1.05rem;
+  border-radius: 12px;
+}
+
+.register-section .form-control::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.register-section .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ff6b00;
+  box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.15);
+  color: white;
+}
+
+.stats-bar h3 {
+  font-size: 40px;
+}
+
+.stats-bar p {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+}
+
+.market-card {
+  background: white;
+  border: 2px solid #e5e7eb !important;
+  transition: all 0.3s ease;
+  border-radius: 16px !important;
+}
+
+.market-card:hover {
+  border-color: #E85B77 !important;
+  box-shadow: 0 12px 30px rgba(232, 91, 119, 0.15) !important;
+  transform: translateY(-4px);
+}
+
+.video-card {
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.video-card:hover {
+  border-color: #E85B77;
+  box-shadow: 0 10px 25px rgba(232, 91, 119, 0.15);
+  transform: translateY(-5px);
+}
+
+.video-card iframe {
+  border-radius: 16px;
+}
