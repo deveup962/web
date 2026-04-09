@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thorn Kapsted</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 text-white" href="#">THORN KAPSTED</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="offer.html">Offer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">FAQ</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <!-- Language selector -->
+          <div class="dropdown">
+            <button class="btn btn-outline-light dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+              <img src="https://flagcdn.com/w40/gb.png" alt="EN" width="24" class="me-2">
+              EN
+            </button>
+          </div>
+
+          <button class="btn btn-danger px-4 rounded-pill fw-semibold" style="background: #E85B77; border: none;">
+            SIGN UP
+          </button>
+          <button class="btn btn-outline-light px-4 rounded-pill fw-semibold">
+            SIGN IN
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</head>
+
+<!-- ==================== CRYPTO FAQ SECTION ==================== -->
+<section class="py-5 bg-white" style="margin-top: 100px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <h2 class=" cryptoo text-center fw-bold mb-3" style="font-size: 70px; letter-spacing: 2px; color: #000;">CRYPTO FAQ</h2>
+        <p class="text-center text-muted mb-5" style="font-size: 20px;">
+          Gain crypto insights and accelerate growth with our AI analytics.<br>
+          Make data-driven decisions to achieve exceptional results.
+        </p>
+
+        <div class="faq-accordion">
+
+          <!-- FAQ 1 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>Is it safe? How are my funds protected?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>Your security is our priority. Thorn Kapsted uses bank-grade encryption, two-factor authentication (2FA), and cold storage for digital assets. We comply with
+                 strict financial regulations in GB and undergo regular audits. Your funds are protected against unauthorised access, so you can trade with confidence.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>I've never invested in cryptocurrency before. Is it complicated?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>Not at all! Thorn Kapsted is designed for beginners:</p>
+              <ul style="padding-left: 20px; margin-top: 8px;">
+                <li>Step-by-step guides and round-the-clock support</li>
+                <li>Risk-free demo account to practise with virtual funds</li>
+                <li>Tools that automate the heavy lifting for you</li>
+                <li>Start small (from just 250 £) and learn as you trade!</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>How quickly can I withdraw funds to my bank card?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>Withdrawals to bank cards typically take 1–3 business days for most regions, whilst crypto withdrawals to external wallets are usually completed within 30 minutes. Processing times may vary depending on your bank and verification status.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>Why are there no fees? What's the catch?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>We generate revenue through premium features and volume-based partnerships with exchanges, rather than charging users directly. There are no hidden fees – you always see the exact transaction amount before you confirm.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>Is this service available in my country?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>Yes! Thorn Kapsted is available in most countries worldwide (98+ and counting). Simply select your country during registration to check availability and view localised payment options. We comply with all local regulations to keep your trading safe and legal.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>How do I decide what to invest in? Do you offer investment recommendations?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>We make cryptocurrency investing accessible for beginners. Thorn Kapsted offers:</p>
+              <ol style="padding-left: 20px; margin-top: 8px;">
+                <li>AI-powered recommendations – Get personalised coin suggestions tailored to your risk profile</li>
+                <li>Ready-made portfolios – Pre-selected asset bundles (e.g. "Starter Pack", "DeFi Bundle")</li>
+                <li>Live market signals – Real-time buy/sell alerts for leading cryptocurrencies</li>
+              </ol>
+              <p class="mt-2">Plus, our interactive tutorial guides you through investing as you go!</p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>Where can I find help if I encounter technical issues?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>We offer 24/7 support through live chat and email at support@thornkapsted.com, with an average response time of under 15 minutes for urgent matters.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>Is cryptocurrency legal in my country, and do you comply with applicable financial regulations?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>Yes, cryptocurrency is legal in most jurisdictions, and Thorn Kapsted operates in full compliance with local regulations:</p>
+              <ol style="padding-left: 20px; margin-top: 8px;">
+                <li><strong>Licensed Service</strong>
+                  <ul style="padding-left: 16px; margin-top: 4px;">
+                    <li>Registered with FinCEN, FCA, CySEC</li>
+                    <li>Regular audits by independent firms</li>
+                  </ul>
+                </li>
+                <li class="mt-2"><strong>Country-Specific Rules</strong>
+                  <ul style="padding-left: 16px; margin-top: 4px;">
+                    <li>Automatic geo-compliance: Our platform adapts to your country's regulatory requirements</li>
+                    <li>KYC verification required where mandated</li>
+                  </ul>
+                </li>
+                <li class="mt-2"><strong>Your Funds Are Protected</strong>
+                  <ul style="padding-left: 16px; margin-top: 4px;">
+                    <li>95% of assets stored offline in cold storage</li>
+                  </ul>
+                </li>
+              </ol>
+              <p class="mt-2">Check our Compliance page to see your country's status, or contact support for further details.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="faq2-item">
+            <button class="faq2-btn" onclick="toggleFaq2(this)">
+              <span>Which payment methods do we support?</span>
+              <svg class="faq2-icon" viewBox="0 0 24 24" fill="none"><path d="M7.41 8L12 12.58L16.59 8L18 9.41L12 15.41L6 9.41L7.41 8Z" fill="currentColor"/></svg>
+            </button>
+            <div class="faq2-answer">
+              <p>You can easily fund your account using:</p>
+              <ol style="padding-left: 20px; margin-top: 8px;">
+                <li><strong>Traditional Payments</strong>
+                  <ul style="padding-left: 16px; margin-top: 4px;">
+                    <li>Visa/Mastercard (2.9% fee)</li>
+                    <li>Bank transfers (SEPA, SWIFT – 0% fee)</li>
+                    <li>PayPal (instant processing)</li>
+                  </ul>
+                </li>
+                <li class="mt-2"><strong>Crypto Deposits</strong>
+                  <ul style="padding-left: 16px; margin-top: 4px;">
+                    <li>Direct cryptocurrency transfers (BTC, ETH, USDT – 0% fee)</li>
+                    <li>QR code scanning for mobile wallets</li>
+                  </ul>
+                </li>
+              </ol>
+              <p class="mt-2">Your deposits will arrive in under 10 minutes. View all options in your account dashboard.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== CRYPTO SUPPORT SECTION ==================== -->
+<section class="py-5 bg-white">
+  <div class="container">
+
+    <h2 class="text-center fw-bold mb-5" style="font-size: 2.4rem; letter-spacing: 2px;">CRYPTO SUPPORT</h2>
+
+    <!-- Row 1: Text left, Image right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-3" style="font-size: 1.6rem;">Customer Support & Assistance</h3>
+        <p class="text-muted" style="line-height: 1.8;">
+          For all inquiries, please contact your partner broker directly. If you don't yet have an account with a trusted brokerage partner, let us know and we'll help you get started. Should you experience any issues with your trading partner's support, reach out to us and we'll do our best to resolve the situation.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="support-img-box">
+          <img src="image/assist-1-320.avif" alt="Customer Support" class="support-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Image left, Text right -->
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-2 order-lg-1">
+        <div class="support-img-box">
+          <img src="image/assist-2-320.avif" alt="Support Hours" class="support-img">
+        </div>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2">
+        <h3 class="fw-bold mb-3" style="font-size: 1.6rem;">Support Hours</h3>
+        <p class="text-muted" style="line-height: 1.8;">
+          Our customer service team is available 24/7. Should you experience any delays in reaching us, our support specialists will respond to your inquiry as soon as possible.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== HOW CAN WE HELP YOU SECTION ==================== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+
+        <h2 class="text-center fw-bold mb-5" style="font-size: 2.2rem; letter-spacing: 2px;">HOW CAN WE HELP YOU?</h2>
+
+        <form id="helpForm">
+
+          <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+            <input type="text" placeholder="First Name" required
+                   style="flex:1; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #ccc; border-radius: 8px; outline: none;">
+            <input type="text" placeholder="Last Name" required
+                   style="flex:1; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #ccc; border-radius: 8px; outline: none;">
+          </div>
+
+          <textarea placeholder="Describe your problem" rows="4" required
+                    style="width: 100%; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #ccc; border-radius: 8px; outline: none; resize: vertical; margin-bottom: 12px; box-sizing: border-box;"></textarea>
+
+          <input type="email" placeholder="Email" required
+                 style="width: 100%; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #ccc; border-radius: 8px; outline: none; margin-bottom: 12px; box-sizing: border-box;">
+
+          <div style="display: flex; align-items: center; border: 1.5px solid #ccc; border-radius: 8px; margin-bottom: 16px; overflow: hidden;">
+            <span style="padding: 14px 12px; display: flex; align-items: center; gap: 6px; font-size: 1rem; background: #fff; white-space: nowrap;">
+              <img src="https://flagcdn.com/w40/gb.png" alt="GB" width="22"> +44
+            </span>
+            <input type="tel" placeholder="7400 123456" required
+                   style="flex:1; padding: 14px 16px; font-size: 1rem; border: none; outline: none;">
+          </div>
+
+          <button type="submit"
+                  style="width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 700; background: linear-gradient(90deg, #E85B77, #FC8450); color: white; border: none; border-radius: 8px; cursor: pointer; letter-spacing: 1px;">
+            SEND
+          </button>
+
+          <p style="font-size: 0.85rem; color: #666; margin-top: 16px; text-align: center;">
+            By entering your personal information and clicking the button, you accept the
+            <a href="#" style="color: #E85B77;">Privacy Policy</a> and
+            <a href="#" style="color: #E85B77;">Terms of Use</a> of the website.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="container">
+  <div class="footer-top">
+      <div class="footer-brand">
+        <h4 class="footer-logo">THORN KAPSTED</h4>
+        <p class="footer-tagline">Your trusted trading partner</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-btn discord">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          </a>
+          <a href="#" class="social-btn youtube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="offer.html">Offer</a>
+        <a href="contact.html">Contact us</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="footer-right">
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="conditions.html">Conditions of Use</a>
+        </div>
+        <div class="footer-lang">
+          <img src="https://flagcdn.com/w40/gb.png" alt="EN" width="22">
+          EN
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+  <p class="footer-disclaimer">
+      SITE RISK DISCLOSURE: Thorn Kapsted does not accept liability for any loss or damage arising from reliance on information contained on this website, including educational materials, price quotes, charts, and analysis. Trading financial markets carries significant risk; please seek professional advice before investing. Never invest more than you can afford to lose. The risks associated with FX, CFDs, and cryptocurrencies may not be suitable for all investors. Thorn Kapsted is not responsible for trading losses you may incur as a result of using or relying on data or information provided on this site.
+    </p>
+    <p class="footer-copyright">Copyright 2026 © Thorn Kapsted. All rights reserved.</p>
+
+  </div>
+</footer>
+<script>
+function toggleFaq2(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('active');
+
+  // mbyll të gjitha
+  document.querySelectorAll('.faq2-btn').forEach(b => {
+    b.classList.remove('active');
+    b.nextElementSibling.style.display = 'none';
+  });
+
+  // hap këtë nëse ishte mbyllur
+  if (!isOpen) {
+    btn.classList.add('active');
+    answer.style.display = 'block';
+  }
+}
+</script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>

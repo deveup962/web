@@ -11,9 +11,7 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-
-
-
+  <link rel="stylesheet" href="responsive.css">
 <body>
 
   <!-- Navbar -->
@@ -31,16 +29,16 @@
             <a class="nav-link active" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Product</a>
+            <a class="nav-link" href="product.html">Product</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Offer</a>
+            <a class="nav-link" href="offer.html">Offer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact us</a>
+            <a class="nav-link" href="contact.html">Contact us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
           </li>
         </ul>
 
@@ -242,7 +240,7 @@
 </section>
 
 <!-- ==================== OUR GUARANTEES SECTION ==================== -->
-<section class="py-5 bg-white">
+<section class="py-5 bg-white" style="padding-bottom: 100px !important ;">
   <div class="container">
     
     <h2 class="text-center display-5 fw-bold mb-4">OUR GUARANTEES</h2>
@@ -383,21 +381,21 @@
   <div class="stats-bar mt-5 py-5" style="background-color: #ffffff; border-top: 1px solid rgba(255,255,255,0.1);margin-top: 70px;">
     <div class="container">
       <div class="row text-center g-4">
-        <div class="col-6 col-md-3">
+        <div class="col-12 col-md-3 ">
           <h3 class="fw-bold mb-1" style="color: #000000;">65+</h3>
-          <p class="mb-0 opacity-75">Available Currencies</p>
+          <p class="mb-0 opacity-75" style="color: #000000;">Available Currencies</p>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-12 col-md-3">
           <h3 class="fw-bold mb-1" style="color: #000000;">34M</h3>
-          <p class="mb-0 opacity-75">Verified Users</p>
+          <p class="mb-0 opacity-75" style="color: #000000;">Verified Users</p>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-12 col-md-3">
           <h3 class="fw-bold mb-1" style="color: #000000;">$400M</h3>
-          <p class="mb-0 opacity-75">Trading Volume</p>
+          <p class="mb-0 opacity-75" style="color: #000000;">Trading Volume</p>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-12 col-md-3">
           <h3 class="fw-bold mb-1" style="color: #000000;">98+</h3>
-          <p class="mb-0 opacity-75">Supported Countries</p>
+          <p class="mb-0 opacity-75" style="color: #000000;">Supported Countries</p>
         </div>
       </div>
     </div>
@@ -406,7 +404,7 @@
 
 <!-- ==================== PLATFORM OVERVIEW SECTION ==================== -->
 
-<section class="py-5 bg-white">
+<section class="py-5 bg-white" style="padding-top: 100px;">
   <div class="container">
     
     <h2 class="text-center display-5 fw-bold mb-4">PLATFORM OVERVIEW</h2>
@@ -424,13 +422,13 @@
       <!-- Currency -->
       <div class="col-lg-5">
         <div class="d-flex align-items-center gap-4">
-          <div style="width: 110px; height: 110px; background: #111; border-radius: 16px; flex-shrink: 0; 
+          <div class="currencyy" style="width: 130px; height: 130px; background: #111; border-radius: 16px; flex-shrink: 0; 
                       display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="image/overview-1-320.avif" alt="Currency" class="img-fluid" style="max-height: 78px;">
+            <img src="image/overview-1-320.avif" alt="Currency" class="img-fluid" style="width: 150px;">
           </div>
           <div>
-            <h4 class="fw-bold mb-1">Currency</h4>
-            <p class="text-muted mb-0 fs-5">US Dollar</p>
+            <h4 class="fw-bold mb-1 currency1">Currency</h4>
+            <p class="text-muted mb-0 fs-5 uss" style="font-size: 17px;">US Dollar</p>
           </div>
         </div>
       </div>
@@ -438,16 +436,16 @@
       <!-- User Rating -->
       <div class="col-lg-5">
         <div class="d-flex align-items-center gap-4">
-          <div style="width: 110px; height: 110px; background: #111; border-radius: 16px; flex-shrink: 0; 
+          <div class="currencyy" style="width: 130px; height: 130px; background: #111; border-radius: 16px; flex-shrink: 0; 
                       display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <img src="image/overview-2-320.avif" alt="User Rating" class="img-fluid" style="max-height: 78px;">
+            <img src="image/overview-2-320.avif" alt="User Rating" class="img-fluid" style="width: 150px;">
           </div>
           <div>
-            <h4 class="fw-bold mb-2">User Rating</h4>
-            <div class="text-warning fs-1 mb-1" style="letter-spacing: 3px;">
+            <h4 class="fw-bold mb-2 currency1">User Rating</h4>
+            <div class="text-warning fs-1 mb-1" style="letter-spacing: 3px; font-size: 30px !important;" >
               ★★★★☆
             </div>
-            <p class="text-muted small mb-0">Based on 12,458 reviews</p>
+            <!-- <p class="text-muted small mb-0">Based on 12,458 reviews</p> -->
           </div>
         </div>
       </div>
@@ -455,49 +453,49 @@
     </div>
 
        <!-- EASY START -->
-    <div class="text-center mt-5">
+    <div class="text-center mt-5 aeas" style="padding-top:70px;">
       <h2 class="display-5 fw-bold mb-5">EASY START</h2>
       
       <div class="row justify-content-center g-5">
 
         <!-- Step 1 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 tt1">
           <div class="d-flex align-items-start gap-4">
-            <div class="bg-dark text-white rounded-3 px-4 py-3 fw-bold fs-3 flex-shrink-0" 
+            <div class=" number01 bg-dark text-white rounded-3 px-4 py-3 fw-bold fs-3 flex-shrink-0" 
                  style="min-width: 58px; text-align: center;">
               1
             </div>
             <div class="text-start">
-              <h5 class="fw-bold mb-1">Register</h5>
-              <p class="text-muted mb-0">Sign up in 30 seconds</p>
+              <h5 class="fw-bold mb-1 currency1 easy1">Register</h5>
+              <p class="text-muted mb-0 currency2 easy2">Sign up in 30 seconds</p>
             </div>
           </div>
         </div>
 
         <!-- Step 2 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 tt1">
           <div class="d-flex align-items-start gap-4">
-            <div class="bg-dark text-white rounded-3 px-4 py-3 fw-bold fs-3 flex-shrink-0" 
+            <div class="number01 bg-dark text-white rounded-3 px-4 py-3 fw-bold fs-3 flex-shrink-0" 
                  style="min-width: 58px; text-align: center;">
               2
             </div>
             <div class="text-start">
-              <h5 class="fw-bold mb-1">Deposit</h5>
-              <p class="text-muted mb-0">250 £</p>
+              <h5 class="fw-bold mb-1 currency1 easy1">Deposit</h5>
+              <p class="text-muted mb-0 currency2 easy2">250 £</p>
             </div>
           </div>
         </div>
 
         <!-- Step 3 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 tt1">
           <div class="d-flex align-items-start gap-4">
-            <div class="bg-dark text-white rounded-3 px-4 py-3 fw-bold fs-3 flex-shrink-0" 
+            <div class=" number01 bg-dark text-white rounded-3 px-4 py-3 fw-bold fs-3 flex-shrink-0" 
                  style="min-width: 58px; text-align: center;">
               3
             </div>
             <div class="text-start">
-              <h5 class="fw-bold mb-1">Trade</h5>
-              <p class="text-muted mb-0">AI handles the rest</p>
+              <h5 class="fw-bold mb-1 currency1 easy1">Trade</h5>
+              <p class="text-muted mb-0 currency2 easy2">AI handles the rest</p>
             </div>
           </div>
         </div>
@@ -505,9 +503,9 @@
       </div>
 
       <!-- Sign Up Button -->
-      <div class="mt-5">
+      <div class="mt-5 btnl">
         <a href="#" 
-           class="btn btn-lg px-5 py-3 text-white fw-bold rounded-pill fs-5"
+           class="btn btn-lg px-5 py-3 text-white fw-bold rounded-pill fs-5 "
            style="background: linear-gradient(90deg, #e5547e, #fc8450); min-width: 260px;">
           SIGN UP
         </a>
@@ -518,7 +516,7 @@
 </section>
 
 <!-- ==================== LIVE MARKET DATA SECTION ==================== -->
-<section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff0f5 100%);">
+<section class="py-5 marketdata" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff0f5 100%); margin-top: 100px;">
   <div class="container">
     
     <h2 class="text-center display-5 fw-bold mb-5">LIVE MARKET DATA</h2>
@@ -649,7 +647,7 @@
   </div>
 
     <!-- CRYPTO FAQ -->
-    <h2 class="text-center display-5 fw-bold mb-5 mt-5">CRYPTO FAQ</h2>
+    <h2 class="text-center display-5 fw-bold mb-5 " style="margin-top: 70px;" >CRYPTO FAQ</h2>
 
     <div class="mx-auto" style="max-width: 820px;">
 
@@ -696,7 +694,7 @@
 
     <!-- Learn More Button -->
     <div class="text-center mt-5">
-      <a href="#" class="btn px-5 py-3 rounded-pill fw-semibold" 
+      <a href="faq.html" class="btn px-5 py-3 rounded-pill fw-semibold" 
          style="background: transparent; border: 2px solid #E85B77; color: #E85B77;">
         LEARN MORE
       </a>
@@ -705,78 +703,70 @@
   </div>
 </section>
 
-<!-- ==================== JOIN NOW SECTION ==================== -->
-<section class="join-now-section py-5 py-lg-6 text-white" 
-         style="background: linear-gradient(90deg, #E6577A 0%, #FC8253 100%); position: relative; overflow: hidden;">
 
+<!-- ==================== CONTACT SECTION ==================== -->
+<section class="contact-section py-5 py-lg-6 text-white"
+         style="background: linear-gradient(90deg, #e35180 0%, #f47460 100%); padding-top: 50px;">
   <div class="container">
     <div class="row align-items-center g-5">
 
-      <!-- Left Text -->
+      <!-- Left -->
       <div class="col-lg-6">
-        <h1 class="display-4 fw-bold mb-3" style="font-size: 3.4rem; line-height: 1.05;">
-          JOIN NOW
-        </h1>
-        <p class="lead mb-0" style="font-size: 1.4rem; opacity: 0.95;">
-          Start today and celebrate your success tomorrow!
+        <h2 class="display-4 fw-bold mb-3" style="font-size: 3.2rem;">CONTACT US</h2>
+        <p class="lead mb-4" style="font-size: 1.2rem; opacity: 0.92;">
+          Have a question? Our team is here to help you 24/7.
         </p>
+        <ul class="list-unstyled mb-0">
+          <li class="d-flex align-items-center gap-3 mb-3">
+            <div class="contact-icon-circle">✉</div>
+            <span>support@thornkapsted.com</span>
+          </li>
+          <li class="d-flex align-items-center gap-3">
+            <div class="contact-icon-circle">📞</div>
+            <span>+44 00 00000 0000</span>
+          </li>
+        </ul>
       </div>
 
       <!-- Right Form -->
       <div class="col-lg-6">
-        <div class="bg-white rounded-4 p-4 p-md-5 shadow" style="max-width: 460px; margin-left: auto;">
+        <div class="bg-white rounded-4 p-4 p-md-5 shadow-lg" style="max-width: 460px; margin-left: auto;">
+          <h5 class="fw-bold mb-4" style="color: #111;">Send us a message</h5>
 
-          <form id="joinNowForm">
+          <form id="contactForm">
             <div class="row g-3">
               <div class="col-6">
-                <input type="text" class="form-control form-control-lg rounded-3" 
-                       placeholder="First Name" required>
+                <input type="text" class="form-control form-control-lg"
+                       name="first_name" placeholder="First Name" required>
               </div>
               <div class="col-6">
-                <input type="text" class="form-control form-control-lg rounded-3" 
-                       placeholder="Last Name" required>
+                <input type="text" class="form-control form-control-lg"
+                       name="last_name" placeholder="Last Name" required>
               </div>
             </div>
-
             <div class="mt-3">
-              <input type="email" class="form-control form-control-lg rounded-3" 
-                     placeholder="Email" required>
+              <input type="email" class="form-control form-control-lg"
+                     name="email" placeholder="Email" required>
             </div>
-
             <div class="mt-3">
-              <div class="input-group">
-                <span class="input-group-text bg-white border-end-0 rounded-start-3">
-                  <img src="https://flagcdn.com/w40/gb.png" alt="GB" width="28">
-                </span>
-                <input type="tel" class="form-control form-control-lg rounded-end-3" 
-                       placeholder="+44 7400 123456" required>
-              </div>
+              <input type="tel" class="form-control form-control-lg"
+                     name="phone" placeholder="Phone" required>
             </div>
-
-            <!-- Sign Up Button -->
-            <button type="submit" 
-                    class="btn w-100 mt-4 py-3 fw-bold fs-5 rounded-3 text-white"
-                    style="background: #0f0f0f; border: none;">
-              SIGN UP
+          
+            <button type="submit"
+                    class="btn w-100 mt-4 py-3 fw-bold fs-5"
+                    style="background: #0f0f0f; color: white; border: none; border-radius: 12px;">
+              SEND MESSAGE
             </button>
-
-            <p class="small text-center mt-4 mb-0 text-muted">
-              By entering your personal information and clicking the button, you accept the 
-              <a href="#" class="text-dark text-decoration-underline">Privacy Policy</a> and 
-              <a href="#" class="text-dark text-decoration-underline">Terms of Use</a> 
-              of the website.
-            </p>
           </form>
-
         </div>
       </div>
 
     </div>
   </div>
 </section>
-<!-- ==================== REAL SUCCESS STORIES SECTION ==================== -->
 
-<section class="py-5 bg-white">
+<section class=" bg-white " style="padding-top: 100px;">
   <div class="container">
     
     <h2 class="text-center display-5 fw-bold mb-3">REAL SUCCESS STORIES WITH THORN KAPSTED</h2>
@@ -787,8 +777,8 @@
     <div class="row g-4">
 
       <!-- Video 1 -->
-      <!-- <div class="col-lg-3 col-md-6">
-        <div class="video-card rounded-4 overflow-hidden shadow-sm">
+      <div class="col-lg-3 col-md-6">
+        <div class="video-card rounded-4 overflow-hidden ">
           <iframe 
             src="https://player.vimeo.com/video/1130318462" 
             width="100%" 
@@ -798,11 +788,11 @@
             allowfullscreen>
           </iframe>
         </div>
-      </div> -->
+      </div>
 
       <!-- Video 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="video-card rounded-4 overflow-hidden shadow-sm">
+      <div class="col-lg-3 col-md-6">
+        <div class="video-card rounded-4 overflow-hidden ">
           <iframe 
             src="https://player.vimeo.com/video/1135993890" 
             width="100%" 
@@ -815,8 +805,8 @@
       </div>
 
       <!-- Video 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="video-card rounded-4 overflow-hidden shadow-sm">
+      <div class="col-lg-3 col-md-6">
+        <div class="video-card rounded-4 overflow-hidden ">
           <iframe 
             src="https://player.vimeo.com/video/1128167934" 
             width="100%" 
@@ -829,8 +819,8 @@
       </div>
 
       <!-- Video 4 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="video-card rounded-4 overflow-hidden shadow-sm">
+      <div class="col-lg-3 col-md-6">
+        <div class="video-card rounded-4 overflow-hidden ">
           <iframe 
             src="https://player.vimeo.com/video/1129773801" 
             width="100%" 
@@ -845,6 +835,304 @@
     </div>
   </div>
 </section>
+
+
+<!-- ==================== THORN KAPSTED HIGHLIGHTS ==================== -->
+<section class="highlights-section py-5 bg-white mt-5">
+  <div class="container">
+
+    <h2 class="text-center display-5 fw-bold mb-5" style="color: #1a1a1a;">
+      THORN KAPSTED HIGHLIGHTS
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- 1 Platform Type -->
+      <div class="col-lg-5 col-md-6">
+        <div class="highlight-card d-flex align-items-start gap-4 p-4">
+          <div class="icon-wrapper">
+            <img src="image/highlights-1-320.avif" alt="Platform Type" class="highlight-icon">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1">Platform Type</h5>
+            <p class="mb-0 text-muted">AI-powered cryptocurrency trading system</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Cost -->
+      <div class="col-lg-5 col-md-6">
+        <div class="highlight-card d-flex align-items-start gap-4 p-4">
+          <div class="icon-wrapper">
+            <img src="image/highlights-2-320.avif" alt="Cost" class="highlight-icon">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1">Cost</h5>
+            <p class="mb-0 text-muted">Free trial with transparent pricing</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Investment Options -->
+      <div class="col-lg-5 col-md-6">
+        <div class="highlight-card d-flex align-items-start gap-4 p-4">
+          <div class="icon-wrapper">
+            <img src="image/highlights-3-320.avif" alt="Investment Options" class="highlight-icon">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1">Investment Options</h5>
+            <p class="mb-0 text-muted">BTC, ETH, BNB, XRP and others</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Countries -->
+      <div class="col-lg-5 col-md-6">
+        <div class="highlight-card d-flex align-items-start gap-4 p-4">
+          <div class="icon-wrapper">
+            <img src="image/highlights-4-320.avif" alt="Countries" class="highlight-icon">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1">Countries</h5>
+            <p class="mb-0 text-muted">Accessible worldwide from any location</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Deposit Methods -->
+      <div class="col-lg-5 col-md-6">
+        <div class="highlight-card d-flex align-items-start gap-4 p-4">
+          <div class="icon-wrapper">
+            <img src="image/highlights-5-320.avif" alt="Deposit Methods" class="highlight-icon">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1">Deposit Methods</h5>
+            <p class="mb-0 text-muted">Credit card, PayPal, or bank transfer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Privacy -->
+      <div class="col-lg-5 col-md-6">
+        <div class="highlight-card d-flex align-items-start gap-4 p-4">
+          <div class="icon-wrapper">
+            <img src="image/highlights-6-320.avif" alt="Privacy" class="highlight-icon">
+          </div>
+          <div>
+            <h5 class="fw-bold mb-1">Privacy</h5>
+            <p class="mb-0 text-muted">Compliant with GB's regulations</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-11 col-12">
+        <div class="highlight-bottom-banner rounded-4 p-4 px-md-5 d-flex flex-column flex-md-row align-items-center justify-content-between text-white"
+             style="background: linear-gradient(90deg, #E85B77 0%, #FC8450 100%);">
+          
+          <h3 class="fw-bold mb-3 mb-md-0 text-center text-md-start" style="font-size: 1.75rem;">
+            BECOME A CRYPTO CHAMPION!
+          </h3>
+          
+          <button onclick="document.getElementById('joinNowForm').scrollIntoView({ behavior: 'smooth' });"
+                  class="btn btn-dark px-3 py-2 fw-bold fs-5" 
+                  style="border-radius: 12px; min-width: 190px; white-space: nowrap; ">
+            SIGN UP
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ==================== STEP INTO CRYPTO SECTION ==================== -->
+<section class="step-crypto-section py-5 py-lg-6 mt-5" 
+         style="background: linear-gradient(135deg, #150425 0%, #130421 50%, #130421 100%); color: white; position: relative; overflow: hidden;">
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-9 text-center">
+
+        <h2 class="display-4 fw-bold mb-3" style="font-size: 3.1rem;">
+          STEP INTO CRYPTO!
+        </h2>
+        
+        <p class="lead mb-5" style="font-size: 1.25rem; opacity: 0.95;">
+          Our AI executes optimal trades around the clock, even whilst you sleep.
+        </p>
+
+        <!-- Form -->
+        <form id="stepCryptoForm" class="mx-auto" style="max-width: 520px;">
+          
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-lg" 
+                     placeholder="First Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-lg" 
+                     placeholder="Last Name" required>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <input type="email" class="form-control form-control-lg" 
+                   placeholder="Email" required>
+          </div>
+
+          <div class="mt-3">
+            <div class="input-group">
+              <span class="input-group-text bg-white border-0" 
+                    style="border-radius: 12px 0 0 12px;">
+                <img src="https://flagcdn.com/w40/gb.png" alt="UK" width="32" height="22">
+              </span>
+              <input type="tel" class="form-control form-control-lg" 
+                     placeholder="+44 7400 123456" required
+                     style="border-radius: 0 12px 12px 0;">
+            </div>
+          </div>
+
+          <!-- Gradient Button -->
+          <button type="submit" 
+                  class="btn w-100 mt-4 py-3 fw-bold fs-5 text-white"
+                  style="background: linear-gradient(90deg, #E85B77 0%, #FC8450 100%);
+                         border: none; border-radius: 12px; letter-spacing: 0.5px;">
+            SIGN UP
+          </button>
+
+          <p class="small text-center mt-4 mb-0 opacity-75">
+            By entering your personal information and clicking the button, you accept the 
+            <a href="#" class="text-white text-decoration-underline">Privacy Policy</a> and 
+            <a href="#" class="text-white text-decoration-underline">Terms of Use</a> 
+            of the website.
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CORE CAPABILITIES SECTION ==================== -->
+<section class="core-capabilities py-5 py-md-6 bg-white mt-5 mb-5">
+  <div class="container">
+    
+    <h2 class="text-center display-5 fw-bold mb-5">
+      CORE CAPABILITIES OF THE THORN KAPSTED<br>TRADING PLATFORM
+    </h2>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
+
+        <!-- Table / List -->
+        <div class="capabilities-table">
+          <div class="capability-row" style="background-color: #fff0f5;">
+            <div class="capability-name">🤖 Platform Technology</div>
+            <div class="capability-desc">Advanced AI-Powered Trading Engine</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">💳 Funding Methods</div>
+            <div class="capability-desc">Major Credit Cards, Bank Transfers, PayPal</div>
+          </div>
+          <div class="capability-row" style="background-color: #fff0f5;">
+            <div class="capability-name">📱 Platform Access</div>
+            <div class="capability-desc">Multi-Device Compatibility</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">🚀 Performance Rate</div>
+            <div class="capability-desc">85% Accuracy</div>
+          </div>
+          <div class="capability-row" style="background-color: #fff0f5;">
+            <div class="capability-name">📊 Trading Instruments</div>
+            <div class="capability-desc">Equities, Forex, Commodities, Precious Metals, CFDs, Cryptocurrencies, and more.</div>
+          </div>
+          <div class="capability-row">
+            <div class="capability-name">✍️ Account Setup</div>
+            <div class="capability-desc">Quick and Efficient</div>
+          </div>
+         <div class="capability-row" style="background-color: #fff0f5;">
+            <div class="capability-name">📞 Customer Support</div>
+            <div class="capability-desc">24/7 Professional Assistance</div>
+          </div>
+        </div>
+
+        <!-- Reviews Box -->
+        <div class="reviews-box mx-auto mt-5">
+          <div class="reviews-header">
+            <h4 class="fw-bold mb-2">THORN KAPSTED REVIEWS</h4>
+            <span class="trusted-badge">TRUSTED</span>
+          </div>
+          
+          <div class="rating mb-3" style="color: #a3a7b4;">
+            <span class="rating-score">4.7</span>
+            <span class="stars">★★★★☆</span> 
+            189 reviews • Based on 247 ratings • Your score out of 5</p>
+          
+          </div>
+          
+         
+          
+          <p class="reviews-text">
+            A robust trading platform offering intuitive automation tools and comprehensive educational resources.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="container">
+  <div class="footer-top">
+      <div class="footer-brand">
+        <h4 class="footer-logo">THORN KAPSTED</h4>
+        <p class="footer-tagline">Your trusted trading partner</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-btn discord">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          </a>
+          <a href="#" class="social-btn youtube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+     <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="offer.html">Offer</a>
+        <a href="contact.html">Contact us</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="footer-right">
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="conditions.html">Conditions of Use</a>
+        </div>
+        <div class="footer-lang">
+          <img src="https://flagcdn.com/w40/gb.png" alt="EN" width="22">
+          EN
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+  <p class="footer-disclaimer">
+      SITE RISK DISCLOSURE: Thorn Kapsted does not accept liability for any loss or damage arising from reliance on information contained on this website, including educational materials, price quotes, charts, and analysis. Trading financial markets carries significant risk; please seek professional advice before investing. Never invest more than you can afford to lose. The risks associated with FX, CFDs, and cryptocurrencies may not be suitable for all investors. Thorn Kapsted is not responsible for trading losses you may incur as a result of using or relying on data or information provided on this site.
+    </p>
+    <p class="footer-copyright">Copyright 2026 © Thorn Kapsted. All rights reserved.</p>
+
+  </div>
+</footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="script.js"></script>
 <script>

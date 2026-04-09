@@ -1,0 +1,506 @@
+/* ==================== RESPONSIVE DESIGN ==================== */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+   
+  
+  }
+/* ================ NAVBAR ================ */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .navbar .btn {
+    margin: 8px auto;
+    display: block;
+    width: 90%;
+    max-width: 280px;
+  }
+}
+
+/* ================ HERO SECTION ================ */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.8rem !important;
+    line-height: 1.1;
+    padding-top: 50px;
+  }
+  
+  .hero {
+    min-height: 70vh;
+    padding-top: 80px;
+  }
+  
+  .crypto-graphic img {
+    max-width: 280px !important;
+  }
+}
+
+/* ================ FORMS ================ */
+@media (max-width: 576px) {
+  #signupForm .row > div,
+  #registerForm .row > div {
+    width: 100%;
+  }
+  
+  .form-control-lg {
+    font-size: 1rem !important;
+  }
+
+  .list-unstyled li{
+    font-size: 17px;
+    margin-bottom: 0px !important;
+  }
+  .guarantee-image-box{
+    padding: 10px ;
+  }
+  .stats-bar p{
+    font-size: 16px !important;
+  }
+  .currencyy{
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .currency1{
+    font-size: 25px;
+  }
+  .uss{
+    font-size: 16px !important;
+  }
+  .number01{
+ padding: 10px !important;
+ font-size: 20px !important;
+  }
+  .easy1{
+    font-size: 18px !important;
+  }
+  .easy2{
+    font-size: 14px !important;
+  }
+  .tt1{
+   margin-top: 10px !important;
+  }
+  .aeas{
+    padding-top: 0px !important;
+  }
+  .btnl{
+    text-align: left !important;
+    justify-content: left !important;
+  }
+  .marketdata{
+    margin-top: 0px !important;
+  }
+}
+
+/* ================ HIGHLIGHTS & FEATURES ================ */
+@media (max-width: 992px) {
+  .highlight-card,
+  .feature-card,
+  .capability-row {
+    margin-bottom: 20px;
+  }
+  
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .highlight-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .guarantee-image-box{
+    margin-top: -30px ;
+  }
+  .highlights-section h5{
+    font-size: 20px !important;
+    margin-top: 0px !important;
+  }
+  .highlights-section p{
+    font-size: 15px !important;
+  }
+  .highlight-card{
+    border: 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: -50px !important;
+  }
+}
+
+/* ================ CHARTS & MARKET DATA ================ */
+/* @media (max-width: 768px) {
+  .market-card {
+    margin-bottom: 20px;
+  }
+  
+  .chart-container,
+  .tradingview-widget-container {
+    height: 380px !important;
+  }
+} */
+
+/* ================ CORE FEATURES & STEPS ================ */
+@media (max-width: 992px) {
+  .step-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .step-number {
+    margin: 0 auto;
+  }
+}
+
+/* ================ FOOTER ================ */
+@media (max-width: 992px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .footer-right {
+    align-items: center;
+  }
+  
+  .footer-nav {
+    justify-content: center;
+  }
+
+  .highlights-section{
+    margin-top: 0px !important;
+  }
+}
+
+/* ================ STATS BAR ================ */
+@media (max-width: 576px) {
+  .stats-bar h3 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ================ GENERAL IMPROVEMENTS ================ */
+@media (max-width: 768px) {
+  .display-5 {
+    font-size:30px !important;
+  }
+  
+  .display-4 {
+    font-size: 2.6rem !important;
+  }
+  
+  .btn-lg {
+    padding: 14px 30px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix for fixed navbar on mobile */
+@media (max-width: 992px) {
+  .fixed-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1030;
+  }
+}
+
+/* ==================== MOBILE FIXES ==================== */
+
+/* Fix për Sign Up Form (pink section) */
+@media (max-width: 768px) {
+  .py-5.py-md-6[style*="linear-gradient(90deg, #E85B77"] {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  #signupForm .form-control-sm,
+  #registerForm .form-control-lg {
+    font-size: 1rem !important;
+    padding: 14px 16px !important;
+  }
+
+  /* Calculator Section */
+  .input-group {
+    max-width: 100% !important;
+  }
+
+  #finalBalance {
+    font-size: 2.2rem !important;
+  }
+
+  /* Prevent shifting */
+  .row.align-items-center {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Fix për Earnings Calculator */
+@media (max-width: 576px) {
+  .rounded-4.p-4.p-md-5 {
+    padding: 20px !important;
+  }
+
+  #daysSlider {
+    margin: 20px 0;
+  }
+
+  .stats-bar .row > div {
+    margin-bottom: 20px;
+  }
+}
+
+/* General mobile stability */
+@media (max-width: 992px) {
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  /* Prevent unwanted horizontal scroll */
+  body, html {
+    overflow-x: hidden;
+  }
+}
+
+.faq-icon{
+    font-size: 12px !important;
+}
+
+/* ================ ANALYTICS SECTION (Monedhat) ================ */
+@media (max-width: 992px) {
+  .analytics-section {
+    min-height: 400px !important;
+    padding: 40px 0 !important;
+  }
+.analytics-section h1{
+    padding-top: 50px !important;
+}
+  .crypto-coin {
+    width: 20px !important;
+  }
+
+  .coin-left {
+display: none !important;
+  }
+
+  .coin-middle {
+    width: 140px !important;
+    left: 12% !important;
+    bottom: 15% !important;
+  }
+
+  .analytics-section h1 {
+    font-size: 2.6rem !important;
+    line-height: 1.1 !important;
+  }
+  .coin-right{
+    margin-left: 100px !important;
+    margin-top: 80px !important;
+  }
+    /* .coin-middle{
+    margin-top: 100px !important;
+  } */
+  .analytc1{
+  padding-top: 20px !important;
+  }
+  .core-features h5{
+    font-size: 20px !important;
+  }
+
+  .core-features p{
+    font-size: 16px !important;
+  }
+  .Risk-Free{
+    margin-top: 0px !important;
+  }
+  .core-features{
+    padding-bottom: 0px !important;
+  }
+  .advc{
+    padding-top: 0px !important;
+  }
+  .stepintocrypto{
+    padding-top: 0px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .analytics-section h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  .coin-left, .coin-right {
+    width: 180px !important;
+  }
+}
+
+/* ================ CORE FEATURES ================ */
+@media (max-width: 992px) {
+  .core-features .col-lg-5 {
+    margin-bottom: 30px;
+  }
+  
+  .feature-icon-box {
+    width: 58px;
+    height: 58px;
+  }
+  
+  .feature-icon-box img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ================ SIGN UP FORM (Pink Section) ================ */
+@media (max-width: 768px) {
+  section[style*="linear-gradient(90deg, #E85B77"] {
+    padding: 40px 15px !important;
+  }
+
+  #signupForm .form-control-sm,
+  #registerForm .form-control-lg {
+    padding: 14px 16px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* ================ EARNINGS CALCULATOR ================ */
+@media (max-width: 768px) {
+  .input-group {
+    max-width: 100% !important;
+  }
+
+  #finalBalance {
+    font-size: 2.1rem !important;
+  }
+
+  .display-5 {
+    font-size: 2.1rem !important;
+  }
+}
+
+/* ================ LIVE MARKET DATA ================ */
+@media (max-width: 768px) {
+  .chart-container, 
+  iframe[style*="height: 520px"] {
+    height: 380px !important;
+  }
+}
+
+
+@media (max-width: 992px) {
+    .join-now-section h1{
+font-size: 35px !important;
+    }
+      .join-now-section p{
+font-size: 16px !important;
+    }
+
+    .getting-started h2{
+        font-size: 35px !important;
+    }
+    .step-item{
+        justify-content: left !important;
+        text-align: left !important;
+    }
+    .step-number{
+        font-size:30px !important;
+        text-align: left !important;
+        margin-left: 0px ;
+
+        
+    }
+    .step-content{
+        justify-content: left !important;
+        text-align: left !important;
+    }
+    .step-content h5{
+        font-size: 23px !important;
+    }
+    .step-content p{
+        font-size: 17px !important;
+    }
+    .title{
+        font-size:35px !important ;
+    }
+    .track-portfolio{
+       padding-top: 0px !important;
+    }
+    .contact-section h2{
+        font-size: 40px !important;
+    }
+    .cryptoo{
+        font-size: 50px !important;
+    }
+    .email-icon-box{
+        width: 40px;
+        height: 40px ;
+       
+    }
+    .fa-envelope{
+        font-size: 25px !important;
+    }
+    .conditions-content h1{
+        font-size: 40px !important;
+    }
+    }
+
+   /* ==================== NAVBAR BUTTONS - MOBILE ONLY ==================== */
+
+@media (max-width: 991px) {
+  
+  .navbar .d-flex.align-items-center.gap-3 {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .navbar .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Butonat të kenë të njëjtën gjerësi dhe stil */
+  .navbar .btn-danger,
+  .navbar .btn-outline-light {
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+  }
+    .footer-lang{
+    display: none;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .navbar .d-flex.align-items-center.gap-3 {
+    flex-direction: row !important;
+  }
+  
+  .navbar .btn {
+    width: auto !important;
+  }
+  .footer-lang{
+    display: none;
+  }
+
+}
