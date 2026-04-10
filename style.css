@@ -715,9 +715,10 @@
   font-size: 16px;
 }
 .title {
-  font-weight: bold;
+  font-weight: 800;
   font-size: 50px;
   margin-top: 50px;
+  letter-spacing: 1;
 }
 
 .title span {

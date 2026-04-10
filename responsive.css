@@ -304,12 +304,11 @@ html {
 /* ================ ANALYTICS SECTION (Monedhat) ================ */
 @media (max-width: 992px) {
   .analytics-section {
-    min-height: 400px !important;
+    min-height: 300px !important;
     padding: 40px 0 !important;
   }
-.analytics-section h1{
-    padding-top: 50px !important;
-}
+
+
   .crypto-coin {
     width: 20px !important;
   }
