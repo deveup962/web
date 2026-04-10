@@ -134,7 +134,7 @@ html, body {
   }
 }
 
-/* ================ CORE FEATURES & STEPS ================ */
+/* ====== CORE FEATURES & STEPS ======== */
 @media (max-width: 992px) {
   .step-item {
     flex-direction: column;
@@ -147,7 +147,7 @@ html, body {
   }
 }
 
-/* ================ FOOTER ================ */
+/* ===== FOOTER ====== */
 @media (max-width: 992px) {
   .footer-top {
     flex-direction: column;
