@@ -339,5 +339,74 @@
     autoFillCountry();
   });
 </script>
+
+<script>
+// ==================== SEND LEAD TO API ====================
+
+const API_URL = "https://affiliate-aicrm.marketing/leads";   
+const API_KEY = "6179081b-8fa9-4326-b533-51a82210e46e";     
+async function sendLeadToCRM(formData) {
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `ApiKey ${API_KEY}`,
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                email: formData.email,
+                first_name: formData.first_name,
+                last_name: formData.last_name,
+                phone: formData.phone,
+                country: formData.country || "AL",
+                refer: "1",           
+                platform_key: "c40nzyzod"  
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            console.log("✅ Lead u krijua me sukses:", result);
+            alert("Thank you! Your registration was successful.");
+            // Mund të mbyllësh modalin automatikisht
+            const modal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
+            if (modal) modal.hide();
+        } else {
+            console.error("❌ API Error:", result);
+            alert("Something went wrong. Please try again.");
+        }
+
+    } catch (error) {
+        console.error("Fetch error:", error);
+        alert("Connection error. Please check your internet and try again.");
+    }
+}
+
+// ==================== FORM SUBMISSION ====================
+
+document.getElementById('modalSignupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const formData = {
+        first_name: form.querySelector('input[placeholder="First Name"]').value.trim(),
+        last_name:  form.querySelector('input[placeholder="Last Name"]').value.trim(),
+        email:      form.querySelector('input[placeholder="Email"]').value.trim(),
+        phone:      form.querySelector('input[placeholder="Phone"]').value.trim(),
+        country:    form.querySelector('#country').value
+    };
+
+    // Validim i thjeshtë
+    if (!formData.email || !formData.first_name || !formData.phone) {
+        alert("Please fill all required fields!");
+        return;
+    }
+
+    sendLeadToCRM(formData);
+});
+</script>
 </body>
 </html>
