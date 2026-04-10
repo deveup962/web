@@ -20,6 +20,9 @@ html, body {
     width: 90%;
     max-width: 280px;
   }
+  .core-capabilities{
+    padding-top: 0px !important
+  }
 }
 
 /* ================ HERO SECTION ================ */
@@ -174,7 +177,23 @@ html, body {
 
   .highlights-section{
     margin-top: 0px !important;
+    padding-top: 0px !important;
   }
+  .t45{
+    margin-top: 0px !important;
+  }
+  .ty7{
+    text-align: left !important;
+    justify-content: left !important;
+ font-size:25px !important  }
+ .ll{
+  margin-top: 0px !important;
+ }
+ .l8{
+  justify-content: left !important;
+  text-align: left !important;
+  padding-left: 5px;
+ }
 }
 
 /* ================ STATS BAR ================ */
@@ -187,7 +206,7 @@ html, body {
 /* ================ GENERAL IMPROVEMENTS ================ */
 @media (max-width: 768px) {
   .display-5 {
-    font-size:30px !important;
+    font-size:32px !important;
   }
   
   .display-4 {
@@ -390,9 +409,7 @@ display: none !important;
     font-size: 2.1rem !important;
   }
 
-  .display-5 {
-    font-size: 2.1rem !important;
-  }
+  
 }
 
 /* ================ LIVE MARKET DATA ================ */
@@ -502,5 +519,8 @@ font-size: 16px !important;
   .footer-lang{
     display: none;
   }
-
+ .ty7{
+    text-align: left !important;
+    justify-content: left !important;
+ font-size:25px !important  }
 }

@@ -42,7 +42,7 @@
     }
 
     .hero-content h1 {
-      font-size: 4.5rem;
+      font-size: 80px;
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 1.5rem;
@@ -50,17 +50,18 @@
     }
 
     .hero-content p {
-      font-size: 1.25rem;
+      font-size: 18px;
       color: #ddd;
+      font-weight: 600;
       max-width: 520px;
     }
 
     .btn-signup {
       background: var(--gradient);
       color: white;
-      padding: 14px 40px;
+      padding: 10px 30px;
       border: none;
-      border-radius: 50px;
+      border-radius: 10px;
       font-weight: 600;
       font-size: 1.1rem;
       transition: all 0.3s;
@@ -401,8 +402,8 @@
 
 /* ==================== FOOTER ==================== */
 .site-footer {
-  background: #08111b;
-  background-image: radial-gradient(ellipse 60% 50% at 65% 40%, #7f424b  0%, transparent 70%);
+  background: #000000;
+  background-image: radial-gradient(ellipse 60% 50% at 65% 40%, #130421  0%, transparent 70%);
   color: white;
   padding: 50px 0 30px;
 }
