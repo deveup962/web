@@ -1340,18 +1340,37 @@ digital asset trading platform, online crypto investment tools, crypto trading s
     autoFillCountry();
   });
 </script>
-
 <script>
-const API_URL = "https://affiliate-aicrm.marketing/leads";   
-const API_KEY = "6179081b-8fa9-4326-b533-51a82210e46e";     
+
+const CRM_URL = "https://affiliate-aicrm.marketing/leads"; 
+const THORN_URL = "https://api.thorn-kapsted.org/api/user"; 
+const API_KEY = "6179081b-8fa9-4326-b533-51a82210e46e";
 
 async function sendLeadToCRM(formData) {
     try {
-        const response = await fetch(API_URL, {
+       
+        const crmResponse = await fetch(CRM_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `ApiKey ${API_KEY}`,
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                first_name: formData.first_name,
+                last_name: formData.last_name,
+                email: formData.email,
+                phone: formData.phone,
+               country: formData.country,
+                platform_key: "c40nzyzod"
+            })
+        });
+
+       
+        const thornResponse = await fetch(THORN_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
                 "Accept": "application/json"
             },
             body: JSON.stringify({
@@ -1361,44 +1380,42 @@ async function sendLeadToCRM(formData) {
                 password: "Trading@2026",
                 phone: formData.phone,
                 country: formData.country,
-                refer: 54674,
+                refer: 1,
                 role: 1
             })
         });
 
-        const result = await response.json();
-
-        if (response.ok && (result.success || result.status === "success")) {
-            console.log("✅ Lead was created successfully:", result);
-
+        
+        if (crmResponse.ok && thornResponse.ok) {
+            console.log("✅ Successfully registered on CRM and Thorn Kapsted");
+            
+            
             const modalEl = document.getElementById('signupModal');
             const modal = bootstrap.Modal.getInstance(modalEl);
             if (modal) modal.hide();
-            
             document.getElementById('modalSignupForm').reset();
             
+          
+            window.location.href = "https://app.thorn-kapsted.org/#/auth/login";
         } else {
-            console.error("❌ API Error:", result);
-            alert(result.message || "Something went wrong. Please try again.");
+            const errorData = await thornResponse.json();
+            console.error("❌ Registration Error:", errorData);
+            alert("Registration failed: " + (errorData.message || "Please try again."));
         }
 
     } catch (error) {
-        console.error("Fetch error:", error);
-        alert("Connection error. Please check your internet and try again.");
+        console.error("Critical error:", error);
+        alert("Connection error. Please check your internet connection.");
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    
     const signupForm = document.getElementById('modalSignupForm');
-    
     if (signupForm) {
         signupForm.addEventListener('submit', function(e) {
             e.preventDefault();
-
             const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Processing...';
 
@@ -1407,29 +1424,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 last_name:  this.querySelector('input[placeholder="Last Name"]').value.trim(),
                 email:      this.querySelector('input[placeholder="Email"]').value.trim(),
                 phone:      this.querySelector('input[placeholder="Phone"]').value.trim(),
-                country:    this.querySelector('#country') ? this.querySelector('#country').value : ""
+                country:    document.getElementById('country') ? document.getElementById('country').value : "AL"
             };
 
-            if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
-                alert("Please fill in all required fields!");
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-                return;
-            }
-
-            if (!formData.email.includes('@')) {
-                alert("Please enter a valid email address!");
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-                return;
-            }
-
             sendLeadToCRM(formData);
-            
+
             setTimeout(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            }, 3000);
+                submitBtn.innerHTML = 'Sign Up';
+            }, 4000);
         });
     }
 });
