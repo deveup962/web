@@ -1319,5 +1319,108 @@ digital asset trading platform, online crypto investment tools, crypto trading s
     autoFillCountry();
   });
 </script>
+
+<script>
+// ==================== SEND LEAD TO API ====================
+
+const API_URL = "https://affiliate-aicrm.marketing/leads";   
+const API_KEY = "6179081b-8fa9-4326-b533-51a82210e46e";     
+
+async function sendLeadToCRM(formData) {
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `ApiKey ${API_KEY}`,
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                email: formData.email,
+                first_name: formData.first_name,
+                last_name: formData.last_name,
+                phone: formData.phone,
+                country: formData.country || "AL",
+                refer: "1",           
+                platform_key: "c40nzyzod"  
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && (result.success || result.status === "success")) {
+            console.log("✅ Lead u krijua me sukses:", result);
+            alert("Thank you! Your registration was successful. We will contact you soon.");
+            
+            // Mbyll modalin
+            const modalEl = document.getElementById('signupModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            if (modal) modal.hide();
+            
+            // Reset form
+            document.getElementById('modalSignupForm').reset();
+            
+        } else {
+            console.error("❌ API Error:", result);
+            alert(result.message || "Something went wrong. Please try again.");
+        }
+
+    } catch (error) {
+        console.error("Fetch error:", error);
+        alert("Connection error. Please check your internet and try again.");
+    }
+}
+
+// ==================== FORM SUBMISSION ====================
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const signupForm = document.getElementById('modalSignupForm');
+    
+    if (signupForm) {
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Processing...';
+
+            const formData = {
+                first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
+                last_name:  this.querySelector('input[placeholder="Last Name"]').value.trim(),
+                email:      this.querySelector('input[placeholder="Email"]').value.trim(),
+                phone:      this.querySelector('input[placeholder="Phone"]').value.trim(),
+                country:    this.querySelector('#country') ? this.querySelector('#country').value : ""
+            };
+
+            // Validim më i mirë
+            if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
+                alert("Please fill in all required fields!");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                return;
+            }
+
+            if (!formData.email.includes('@')) {
+                alert("Please enter a valid email address!");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                return;
+            }
+
+            sendLeadToCRM(formData);
+            
+            // Reset button pas 2 sekondash (në rast gabimi)
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }, 2000);
+        });
+    }
+});
+</script>
 </body>
 </html>
