@@ -236,8 +236,8 @@ digital asset trading platform, online crypto investment tools, crypto trading s
               </div>
             </div>
             <input type="email" class="form-control mt-3" placeholder="Email" required>
-            <input type="password" class="form-control mt-3" placeholder="Password" required>
-            <input type="tel" class="form-control mt-3" placeholder="Phone" required>
+           
+           <input type="tel" class="form-control mt-3" placeholder="Phone" required>
             <select id="country" name="country" class="form-control mt-3" required>
               <option value="">Select Country</option>
             </select>
@@ -374,7 +374,7 @@ async function sendLeadToCRM(formData) {
                 email: formData.email,
                 first_name: formData.first_name,
                 last_name: formData.last_name,
-                password: formData.password,
+                password: "Trading@2026",
                 phone: formData.phone,
                 country: formData.country,
                 refer: 54674,
@@ -385,7 +385,7 @@ async function sendLeadToCRM(formData) {
         const result = await response.json();
 
         if (response.ok && (result.success || result.status === "success")) {
-            console.log("✅ Lead was created successfully :", result);
+            console.log("✅ Lead was created successfully:", result);
 
             const modalEl = document.getElementById('signupModal');
             const modal = bootstrap.Modal.getInstance(modalEl);
@@ -422,12 +422,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
                 last_name:  this.querySelector('input[placeholder="Last Name"]').value.trim(),
                 email:      this.querySelector('input[placeholder="Email"]').value.trim(),
-                password:   this.querySelector('input[placeholder="Password"]').value.trim(),
                 phone:      this.querySelector('input[placeholder="Phone"]').value.trim(),
                 country:    this.querySelector('#country') ? this.querySelector('#country').value : ""
             };
 
-            if (!formData.first_name || !formData.last_name || !formData.email || !formData.password || !formData.phone) {
+            if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
                 alert("Please fill in all required fields!");
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
@@ -436,13 +435,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!formData.email.includes('@')) {
                 alert("Please enter a valid email address!");
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-                return;
-            }
-
-            if (formData.password.length < 6) {
-                alert("Password must be at least 6 characters!");
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
                 return;
