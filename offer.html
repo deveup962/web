@@ -89,12 +89,14 @@ digital asset trading platform, online crypto investment tools, crypto trading s
           Start trading in just 5 minutes: register, fund, and trade.
         </p>
 
-          <!-- Sign Up Button -->
-        <button onclick="document.getElementById('joinNowForm').scrollIntoView({ behavior: 'smooth' });"
-                class="btn w-50 w-md-auto px-5 py-2 fw-bold fs-5 mb-4"
-                style="background: linear-gradient(90deg, #E85B77 0%, #FC8450 100%); border: none; border-radius: 50px; color: white;">
-          SIGN UP
-        </button>
+                   <!-- SIGN UP -->
+  <button class="btn w-50 w-md-auto px-5 py-2 fw-bold fs-5 mb-4" 
+        style="background: linear-gradient(90deg, #E85B77 0%, #FC8450 100%); border: none; border-radius: 50px; color: white;"
+          data-bs-toggle="modal" data-bs-target="#signupModal">
+    SIGN UP
+  </button>
+
+
 
         <!-- App Store Buttons -->
         <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -149,18 +151,22 @@ digital asset trading platform, online crypto investment tools, crypto trading s
             <div class="step-number">4</div>
             <div class="step-content">
               <h5>Security concerns? We're here to help.</h5>
-              <p>Your safety comes first: we use two-factor authentication, withdrawal address whitelists, encrypted data, and keep the majority of assets in cold storage. Continuous risk monitoring and compliance checks help maintain platform security. Trade with confidence, knowing your account is protected.</p>
+              <p>Your safety comes first: we use two-factor authentication, withdrawal address whitelists, encrypted data, and keep the majority of assets in cold storage. 
+                Continuous risk monitoring and compliance checks help maintain platform security. Trade with confidence, knowing your account is protected.</p>
             </div>
           </div>
 
         </div>
 
         <div class="text-center mt-5">
-          <button onclick="document.getElementById('joinNowForm').scrollIntoView({ behavior: 'smooth' });"
-                  class="btn px-5 py-2 fw-bold fs-5 text-white"
-                  style="background: linear-gradient(90deg, #E85B77, #FC8450); border-radius: 10px;">
-            SIGN UP
-          </button>
+
+                     
+  <button class="btn px-5 py-2 fw-bold fs-5 text-white"
+          style="background: linear-gradient(90deg, #E85B77, #FC8450); border-radius: 10px;"
+          data-bs-toggle="modal" data-bs-target="#signupModal">
+    SIGN UP
+  </button>
+         
         </div>
       </div> 
   </div>
@@ -190,53 +196,60 @@ digital asset trading platform, online crypto investment tools, crypto trading s
   </div>
 </section>
 <!-- ==================== TRACK PORTFOLIO SECTION ==================== -->
-<section class="track-portfolio py-5 bg-white">
-  <div class="container">
+<section style="background: #ffffff; padding: 80px 20px; text-align: center;">
+  <div style="max-width: 540px; margin: 0 auto;">
+    
+    <h2 style="font-size: 40px; font-weight: 800; letter-spacing: 1px; margin-bottom: 12px;">
+      TRACK PORTFOLIO AND PROFITS
+    </h2>
+    
+    <p style="color: #555; font-size: 1.05rem; margin-bottom: 32px;">
+      Our AI executes optimal trades around the clock, even whilst you sleep.
+    </p>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-6" >
- <h2 class="title">
-  <span>TRACK PORTFOLIO</span>
-  <span class="and">AND PROFITS</span>
-  
-</h2>
-        </div>
-    <div class="col-lg-6" >
-            
-          <form id="portfolioForm">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control form-control-lg" placeholder="First Name" required>
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control form-control-lg" placeholder="Last Name" required>
-              </div>
-            </div>
-            
-            <div class="mt-3">
-              <input type="email" class="form-control form-control-lg" placeholder="Email" required>
-            </div>
-            
-            <div class="mt-3">
-              <div class="input-group">
-                <span class="input-group-text"><img src="https://flagcdn.com/w40/gb.png" width="28" alt="UK"></span>
-                <input type="tel" class="form-control form-control-lg" placeholder="+44 7400 123456" required>
-              </div>
-            </div>
+    <form id="trackPortfolioForm">
 
-            <button type="submit" class="btn w-100 mt-3 py-2 fw-bold text-white"
-                    style="background: #0f0f0f; border-radius: 12px;">
-              SIGN UP
-            </button>
+      <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+        <input type="text" placeholder="First Name" required
+               style="flex:1; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #222; border-radius: 10px; outline: none;">
+        <input type="text" placeholder="Last Name" required
+               style="flex:1; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #222; border-radius: 10px; outline: none;">
+      </div>
 
-            <p class="small text-center mt-3 text-muted">
-              By entering your personal information and clicking the button, you accept the 
-              <a href="privacy.html" class="text-dark">Privacy Policy</a> and 
-              <a href="conditions.html" class="text-dark">Terms of Use</a> of the website.
-            </p>
-          </form>
-        </div>
-    </div>
+      <input type="email" placeholder="Email" required
+             style="width: 100%; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #222; border-radius: 10px; outline: none; margin-bottom: 12px;">
+
+      <div style="display: flex; align-items: center; border: 1.5px solid #222; border-radius: 10px; margin-bottom: 12px; overflow: hidden;">
+        <span style="padding: 14px 12px; display: flex; align-items: center; gap: 6px; font-size: 1rem; white-space: nowrap; background: #fff;">
+          <img src="https://flagcdn.com/w40/gb.png" alt="GB" width="22"> +44
+        </span>
+        <input type="tel" placeholder="7400 123456" required
+               style="flex:1; padding: 14px 16px; font-size: 1rem; border: none; outline: none;">
+      </div>
+
+   <div class="mt-2">
+  <select id="country" name="country" class="form-control form-control-sm" required>
+    <option value="">Select Country</option>
+  </select>
+</div>
+      <select name="country" required
+              style="width: 100%; padding: 14px 16px; font-size: 1rem; border: 1.5px solid #222; border-radius: 10px; outline: none; margin-bottom: 12px; background: white; color: #333;">
+        <option value="">Select Country</option>
+      </select>
+
+      <button type="submit"
+              style="width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 700; background: #0f0f0f; color: white; border: none; border-radius: 10px; cursor: pointer; letter-spacing: 1px;">
+        SIGN UP
+      </button>
+
+      <p style="font-size: 0.85rem; color: #666; margin-top: 16px;">
+        By entering your personal information and clicking the button, you accept the
+        <a href="privacy.html" style="color: #E85B77;">Privacy Policy</a> and
+        <a href="conditions.html" style="color: #E85B77;">Terms of Use</a> of the website.
+      </p>
+
+    </form>
+
   </div>
 </section>
 <!-- ==================== FOOTER ==================== -->
