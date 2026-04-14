@@ -718,52 +718,69 @@ digital asset trading platform, online crypto investment tools, crypto trading s
 
     <div class="row g-4">
 
-      <!-- Video 1 - Wistia -->
       <div class="col-lg-3 col-md-6 col-6">
-        <div class="video-card rounded-4 overflow-hidden">
-          <div style="position:relative; padding-top:177.78%;">   <!-- 9:16 Aspect Ratio -->
-            
-            <script src="https://fast.wistia.com/player.js" async></script>
-            <script src="https://fast.wistia.com/embed/n3ubvn2ebw.js" async type="module"></script>
+  <div class="video-card rounded-4 overflow-hidden">
 
-            <style>
-              wistia-player[media-id='n3ubvn2ebw']:not(:defined) {
-                background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/n3ubvn2ebw/swatch');
-                display: block;
-                filter: blur(5px);
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 80%;
-                height: 80%;
-              }
-            </style>
+    <div style="position:relative; padding-top:177.78%;">
 
-            <wistia-player 
-              media-id="n3ubvn2ebw" 
-              aspect="1.7778"
-              style="position:absolute; top:0; left:0; width:80%; height:80%;">
-            </wistia-player>
-          </div>
-        </div>
+      <!-- Wistia Scripts (load once ideally) -->
+      <script src="https://fast.wistia.com/player.js" async></script>
+      <script src="https://fast.wistia.com/embed/n3ubvn2ebw.js" async type="module"></script>
+      <script src="https://fast.wistia.com/embed/kdczmhdl6s.js" async type="module"></script>
+
+      <!-- Styles -->
+      <style>
+        wistia-player:not(:defined) {
+          background: center / contain no-repeat;
+          display: block;
+          filter: blur(5px);
+        }
+
+        .wistia-wrap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          height: 80%;
+        }
+      </style>
+
+      <!-- VIDEO 2 -->
+      <div class="wistia-wrap">
+        <wistia-player 
+          media-id="n3ubvn2ebw" 
+          aspect="0.5625"
+          style="width:100%; height:100%;">
+        </wistia-player>
       </div>
 
-      <!-- Video 2 - Vimeo -->
-      <div class="col-lg-3 col-md-6 col-6">
-        <div class="video-card rounded-4 overflow-hidden">
-          <div style="position:relative; padding-top:177.78%;">
-            <iframe 
-              src="https://player.vimeo.com/video/1135993890" 
-              width="80%" 
-              height="80%" 
-              frameborder="0" 
-              allow="autoplay; fullscreen; picture-in-picture" 
-              allowfullscreen
-              style="position:absolute; top:0; left:0; width:80%; height:80%;">
-            </iframe>
-          </div>
-        </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="col-lg-3 col-md-6 col-6">
+  <div class="video-card rounded-4 overflow-hidden">
+
+    <div style="position:relative; padding-top:177.78%;">
+
+      <div class="wistia-wrap">
+        <wistia-player 
+          media-id="kdczmhdl6s" 
+          aspect="0.5625"
+          style="width:100%; height:100%;">
+        </wistia-player>
       </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
 
       <!-- Video 3 - Vimeo -->
       <div class="col-lg-3 col-md-6 col-6">
