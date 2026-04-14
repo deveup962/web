@@ -15,6 +15,7 @@ digital asset trading platform, online crypto investment tools, crypto trading s
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="responsive.css">
+  </head>
 <body>
 
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -61,7 +62,7 @@ digital asset trading platform, online crypto investment tools, crypto trading s
       </div>
     </div>
   </nav>
-</head>
+
  <div style="padding-top: 100px; padding-bottom: 80px;">
     <div class="container">
       <div class="row justify-content-center">
@@ -187,24 +188,24 @@ digital asset trading platform, online crypto investment tools, crypto trading s
         <div style="background: linear-gradient(90deg, #E85B77 0%, #F26F64 100%); color: white; padding: 40px 30px; text-align: center;">
           <h3 class="fw-bold mb-2">Sign up now</h3>
           <p class="mb-4">Start now and celebrate your progress tomorrow!</p>
-          <form id="modalSignupForm">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="First Name" required>
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Last Name" required>
-              </div>
-            </div>
-            <input type="email" class="form-control mt-3" placeholder="Email" required>
-           <input type="tel" class="form-control mt-3" placeholder="Phone" required>
-            <select id="country" name="country" class="form-control mt-3" required>
-              <option value="">Select Country</option>
-            </select>
-            <button type="submit" class="btn btn-dark w-100 mt-4 py-3 fw-bold">
-              SIGN UP
-            </button>
-          </form>
+<form id="modalSignupForm" method="POST">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="First Name" required>
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Last Name" required>
+    </div>
+  </div>
+  <input type="email" class="form-control mt-3" placeholder="Email" required>
+  <input type="tel" class="form-control mt-3" placeholder="Phone" required>
+  <select id="country" name="country" class="form-control mt-3" required>
+    <option value="">Select Country</option>
+  </select>
+  <button type="submit" class="btn btn-dark w-100 mt-4 py-3 fw-bold">
+    SIGN UP
+  </button>
+</form>
           <p class="small mt-3 mb-0" style="opacity: 0.9;">
             By signing up you accept our <a href="privacy.html" class="text-white">Privacy Policy</a> and <a href="conditions.html" class="text-white">Terms of Use</a>
           </p>
@@ -246,180 +247,111 @@ digital asset trading platform, online crypto investment tools, crypto trading s
     </div>
   </div>
 </div>
-<script>
-
-  function switchToSignup() {
-    const signinModal = bootstrap.Modal.getInstance(document.getElementById('signinModal'));
-    signinModal.hide();
-    
-    setTimeout(() => {
-      new bootstrap.Modal(document.getElementById('signupModal')).show();
-    }, 500);
-  }
-
-
-  function showForgotPassword() {
-    const signinModal = bootstrap.Modal.getInstance(document.getElementById('signinModal'));
-    if (signinModal) signinModal.hide();
-    
-    setTimeout(() => {
-      new bootstrap.Modal(document.getElementById('forgotPasswordModal')).show();
-    }, 400);
-  }
-
-
-  function backToSignIn() {
-    const forgotModal = bootstrap.Modal.getInstance(document.getElementById('forgotPasswordModal'));
-    if (forgotModal) forgotModal.hide();
-    
-    setTimeout(() => {
-      new bootstrap.Modal(document.getElementById('signinModal')).show();
-    }, 400);
-  }
-</script>
-<script>
-    async function autoFillCountry() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            
-            const countryCode = data.country_code;
-            
-            if (!countryCode) return;
-
-            const countryIds = [
-                'country',
-                'country1',
-                'country2',
-                'country3'
-            ];
-
-            countryIds.forEach(id => {
-                const selectElement = document.getElementById(id);
-                if (selectElement) {
-                    selectElement.value = countryCode;
-                }
-            });
-
-            console.log("✅ Country auto-filled successfully:", countryCode);
-
-        } catch (error) {
-            console.log("IP autofill failed:", error);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        autoFillCountry();
-
-        const signupModal = document.getElementById('signupModal');
-        if (signupModal) {
-            signupModal.addEventListener('shown.bs.modal', autoFillCountry);
-        }
-    });
-</script>
 
 <script>
-    const THORN_URL = `https://api.${window.location.hostname}/api/user`;
+// ==================== CONFIG ====================
+const THORN_URL = `https://api.${window.location.hostname}/api/user`;
 
-    async function autoFillCountry() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            
+// ==================== AUTO FILL COUNTRY ====================
+async function autoFillCountry() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        const countryCode = data.country_code;
+
+        if (countryCode) {
             const countrySelect = document.getElementById('country');
-            if (countrySelect && data.country_code) {
-                countrySelect.value = data.country_code;
+            if (countrySelect) {
+                countrySelect.value = countryCode;
             }
-            
-            const otherSelects = ['country-main', 'country-register', 'country-step'];
-            otherSelects.forEach(id => {
-                const sel = document.getElementById(id);
-                if (sel && data.country_code) {
-                    sel.value = data.country_code;
-                }
-            });
-            
-            console.log(" Country auto-filled:", data.country_code);
-        } catch (error) {
-            console.log("IP autofill failed:", error);
         }
+        console.log("✅ Country auto-filled:", countryCode);
+    } catch (error) {
+        console.log("IP autofill failed:", error);
+    }
+}
+
+// ==================== SEND TO THORN ====================
+async function sendToThorn(formData) {
+    try {
+        const response = await fetch(THORN_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                first_name: formData.first_name,
+                last_name: formData.last_name,
+                email: formData.email,
+                phone: formData.phone,
+                country: formData.country,
+                password: "Trading@2026",
+                refer: 1,
+                role: 1
+            })
+        });
+
+        if (response.ok) {
+            console.log("Successfully registered");
+            const modal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
+            if (modal) modal.hide();
+            
+            alert("Registration successful! Redirecting...");
+            window.location.href = "https://app.thorn-kapsted.org/#/auth/login";
+        } else {
+            const errorData = await response.json().catch(() => ({}));
+            alert("Registration failed: " + (errorData.message || "Please try again."));
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Connection error. Please check your internet connection.");
+    }
+}
+
+// ==================== INITIALIZE ====================
+document.addEventListener('DOMContentLoaded', function () {
+    
+    autoFillCountry();
+
+    // Auto-fill when modal opens
+    const signupModal = document.getElementById('signupModal');
+    if (signupModal) {
+        signupModal.addEventListener('shown.bs.modal', autoFillCountry);
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const signupForm = document.getElementById('modalSignupForm');
-        
-        if (signupForm) {
-            signupForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                
-                const submitBtn = this.querySelector('button[type="submit"]');
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Processing...';
+    // Handle Modal Signup Form
+    const modalForm = document.getElementById('modalSignupForm');
+    if (modalForm) {
+        modalForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                const countryEl = document.getElementById('country');
-                
-                const formData = {
-                    first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
-                    last_name: this.querySelector('input[placeholder="Last Name"]').value.trim(),
-                    email: this.querySelector('input[placeholder="Email"]').value.trim(),
-                    phone: this.querySelector('input[placeholder="Phone"]').value.trim(),
-                    country: countryEl?.value || ""
-                };
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
 
-                sendToThorn(formData);
-                
-                setTimeout(() => {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Processing...';
+
+            const formData = {
+                first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
+                last_name: this.querySelector('input[placeholder="Last Name"]').value.trim(),
+                email: this.querySelector('input[placeholder="Email"]').value.trim(),
+                phone: this.querySelector('input[placeholder="Phone"]').value.trim(),
+                country: document.getElementById('country')?.value || ""
+            };
+
+            sendToThorn(formData);
+
+            // Reset button after 4 seconds only if still there
+            setTimeout(() => {
+                if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Sign Up';
-                }, 4000);
-            });
-        }
-
-        autoFillCountry();
-
-        const modalEl = document.getElementById('signupModal');
-        if (modalEl) {
-            modalEl.addEventListener('shown.bs.modal', autoFillCountry);
-        }
-    });
-
-    async function sendToThorn(formData) {
-        try {
-            const thornResponse = await fetch(THORN_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify({
-                    email: formData.email,
-                    first_name: formData.first_name,
-                    last_name: formData.last_name,
-                    password: "Trading@2026",
-                    phone: formData.phone,
-                    country: formData.country,
-                    refer: 1,
-                    role: 1
-                })
-            });
-
-            if (thornResponse.ok) {
-                console.log(" Successfully registered on Thorn Kapsted");
-                
-                const modal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
-                if (modal) modal.hide();
-                
-                document.getElementById('modalSignupForm').reset();
-                window.location.href = "https://app.thorn-kapsted.org/#/auth/login";
-            } else {
-                const errorData = await thornResponse.json().catch(() => ({}));
-                alert("Registration failed: " + (errorData.message || "Please try again."));
-            }
-        } catch (error) {
-            console.error("Critical error:", error);
-            alert("Connection error. Please check your internet connection.");
-        }
+                    submitBtn.innerHTML = originalText;
+                }
+            }, 4000);
+        });
     }
+});
 </script>
 </body>
 </html>
