@@ -419,181 +419,159 @@ function toggleFaq2(btn) {
     </div>
   </div>
 </div>
-<script>
 
-  function switchToSignup() {
-    const signinModal = bootstrap.Modal.getInstance(document.getElementById('signinModal'));
-    signinModal.hide();
-    
-    setTimeout(() => {
-      new bootstrap.Modal(document.getElementById('signupModal')).show();
-    }, 500);
-  }
-
- 
-  function showForgotPassword() {
-    const signinModal = bootstrap.Modal.getInstance(document.getElementById('signinModal'));
-    if (signinModal) signinModal.hide();
-    
-    setTimeout(() => {
-      new bootstrap.Modal(document.getElementById('forgotPasswordModal')).show();
-    }, 400);
-  }
-
- 
-  function backToSignIn() {
-    const forgotModal = bootstrap.Modal.getInstance(document.getElementById('forgotPasswordModal'));
-    if (forgotModal) forgotModal.hide();
-    
-    setTimeout(() => {
-      new bootstrap.Modal(document.getElementById('signinModal')).show();
-    }, 400);
-  }
-</script>
 
 <script>
-    async function autoFillCountry() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            
-            const countryCode = data.country_code;
-            
-            if (!countryCode) return;
 
-            const countryIds = [
-                'country',
-                'country1',
-                'country2',
-                'country3'
-            ];
+const THORN_URL = `https://api.${window.location.hostname}/api/user`;
 
-            countryIds.forEach(id => {
-                const selectElement = document.getElementById(id);
-                if (selectElement) {
-                    selectElement.value = countryCode;
-                }
-            });
 
-            console.log("✅ Country auto-filled successfully:", countryCode);
+async function autoFillCountry() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        const countryCode = data.country_code;
 
-        } catch (error) {
-            console.log("IP autofill failed:", error);
+        if (countryCode) {
+           
+            const countryModal = document.getElementById('country');
+            if (countryModal) countryModal.value = countryCode;
+
+           
+            const contactCountry = document.getElementById('contactCountry');
+            if (contactCountry) contactCountry.value = countryCode;
         }
+    } catch (error) {
+        console.log("IP autofill failed:", error);
     }
+}
 
-    document.addEventListener('DOMContentLoaded', function () {
-        autoFillCountry();
+// ==================== SEND TO THORN (for signup) ====================
+async function sendToThorn(formData) {
+    try {
+        const response = await fetch(THORN_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                first_name: formData.first_name,
+                last_name: formData.last_name,
+                email: formData.email,
+                phone: formData.phone,
+                country: formData.country,
+                password: "Trading@2026",
+                refer: 1,
+                role: 1
+            })
+        });
 
-        const signupModal = document.getElementById('signupModal');
-        if (signupModal) {
-            signupModal.addEventListener('shown.bs.modal', autoFillCountry);
+        if (response.ok) {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
+            if (modal) modal.hide();
+            alert("Registration successful! Redirecting...");
+            window.location.href = "https://app.thorn-kapsted.org/#/auth/login";
+        } else {
+            alert("Registration failed. Please try again.");
         }
-    });
-</script>
-
-<script>
-    const THORN_URL = `https://api.${window.location.hostname}/api/user`;
-
-    async function autoFillCountry() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            
-            const countrySelect = document.getElementById('country');
-            if (countrySelect && data.country_code) {
-                countrySelect.value = data.country_code;
-            }
-            
-            const otherSelects = ['country-main', 'country-register', 'country-step'];
-            otherSelects.forEach(id => {
-                const sel = document.getElementById(id);
-                if (sel && data.country_code) {
-                    sel.value = data.country_code;
-                }
-            });
-            
-            console.log(" Country auto-filled:", data.country_code);
-        } catch (error) {
-            console.log("IP autofill failed:", error);
-        }
+    } catch (error) {
+        console.error(error);
+        alert("Connection error. Please check your internet.");
     }
+}
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const signupForm = document.getElementById('modalSignupForm');
-        
-        if (signupForm) {
-            signupForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                
-                const submitBtn = this.querySelector('button[type="submit"]');
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Processing...';
+// ==================== HANDLE CONTACT FORM ====================
+function handleContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
 
-                const countryEl = document.getElementById('country');
-                
-                const formData = {
-                    first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
-                    last_name: this.querySelector('input[placeholder="Last Name"]').value.trim(),
-                    email: this.querySelector('input[placeholder="Email"]').value.trim(),
-                    phone: this.querySelector('input[placeholder="Phone"]').value.trim(),
-                    country: countryEl?.value || ""
-                };
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-                sendToThorn(formData);
-                
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Sign Up';
-                }, 4000);
-            });
-        }
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
 
-        autoFillCountry();
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
 
-        const modalEl = document.getElementById('signupModal');
-        if (modalEl) {
-            modalEl.addEventListener('shown.bs.modal', autoFillCountry);
-        }
-    });
+        const formData = {
+            first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
+            last_name: this.querySelector('input[placeholder="Last Name"]').value.trim(),
+            email: this.querySelector('input[placeholder="Email"]').value.trim(),
+            phone: this.querySelector('input[type="tel"]').value.trim(),
+            country: document.getElementById('contactCountry').value,
+            message: this.querySelector('textarea').value.trim()
+        };
 
-    async function sendToThorn(formData) {
         try {
-            const thornResponse = await fetch(THORN_URL, {
+           
+            const response = await fetch(THORN_URL, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    email: formData.email,
-                    first_name: formData.first_name,
-                    last_name: formData.last_name,
-                    password: "Trading@2026",
-                    phone: formData.phone,
-                    country: formData.country,
-                    refer: 1,
-                    role: 1
+                    ...formData,
+                    type: "contact_message"
                 })
             });
 
-            if (thornResponse.ok) {
-                console.log(" Successfully registered on Thorn Kapsted");
-                
-                const modal = bootstrap.Modal.getInstance(document.getElementById('signupModal'));
-                if (modal) modal.hide();
-                
-                document.getElementById('modalSignupForm').reset();
-                window.location.href = "https://app.thorn-kapsted.org/#/auth/login";
+            if (response.ok) {
+                alert("Thank you! Your message has been sent successfully.");
+                contactForm.reset();
             } else {
-                const errorData = await thornResponse.json().catch(() => ({}));
-                alert("Registration failed: " + (errorData.message || "Please try again."));
+                alert("Failed to send message. Please try again.");
             }
         } catch (error) {
-            console.error("Critical error:", error);
-            alert("Connection error. Please check your internet connection.");
+            console.error(error);
+            alert("Connection error. Please try again later.");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
         }
+    });
+}
+
+// ==================== INITIALIZE EVERYTHING ====================
+document.addEventListener('DOMContentLoaded', function () {
+    autoFillCountry();
+
+    
+    const signupModal = document.getElementById('signupModal');
+    if (signupModal) {
+        signupModal.addEventListener('shown.bs.modal', autoFillCountry);
     }
+
+    
+    const modalSignupForm = document.getElementById('modalSignupForm');
+    if (modalSignupForm) {
+        modalSignupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Processing...';
+
+            const formData = {
+                first_name: this.querySelector('input[placeholder="First Name"]').value.trim(),
+                last_name: this.querySelector('input[placeholder="Last Name"]').value.trim(),
+                email: this.querySelector('input[placeholder="Email"]').value.trim(),
+                phone: this.querySelector('input[placeholder="Phone"]').value.trim(),
+                country: document.getElementById('country')?.value || ""
+            };
+
+            sendToThorn(formData);
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 4000);
+        });
+    }
+
+    
+    handleContactForm();
+});
 </script>
 </body>
 </html>

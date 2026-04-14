@@ -117,3 +117,6 @@ function toggleFaq(btn) {
       new bootstrap.Modal(document.getElementById('signinModal')).show();
     }, 400);
   }
+
+
+ 

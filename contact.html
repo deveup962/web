@@ -68,52 +68,51 @@ digital asset trading platform, online crypto investment tools, crypto trading s
     <div class="row justify-content-center">
       <div class="col-lg-7 col-xl-6 text-center">
         
-        <form id="contactForm" class="mx-auto" style="max-width: 520px;">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input type="text" class="form-control form-control-lg" placeholder="First Name" required>
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control form-control-lg" placeholder="Last Name" required>
-            </div>
-          </div>
-          
-          <div class="mt-3">
-            <textarea class="form-control form-control-lg" rows="4" 
-                      placeholder="Describe your problem" required></textarea>
-          </div>
-          
-          <div class="mt-3">
-            <input type="email" class="form-control form-control-lg" 
-                   placeholder="Email" required>
-          </div>
-          
-          <!-- Simple phone input without flag -->
-          <div class="mt-3">
-            <input type="tel" class="form-control form-control-lg" 
-                   placeholder="+44 7400 123456" required>
-          </div>
-          
-          <div class="mt-3">
-            <select id="contactCountry" name="country" class="form-control form-control-lg" required>
-              <option value="">Select Country</option>
-            </select>
-          </div>
-          
-          <button type="submit" 
-                  class="btn w-100 mt-3 py-2 fw-bold fs-5 text-white"
-                  style="background: linear-gradient(90deg, #E85B77 0%, #FC8450 100%); 
-                         border: none; border-radius: 12px; font-size: 16px !important;">
-            SEND
-          </button>
-          
-          <p class="small text-center mt-4 text-muted">
-            By entering your personal information and clicking the button, you accept the 
-            <a href="privacy.html" class="text-dark text-decoration-underline">Privacy Policy</a> and 
-            <a href="conditions.html" class="text-dark text-decoration-underline">Terms of Use</a> 
-            of the website.
-          </p>
-        </form>
+       <form id="contactForm" class="mx-auto" style="max-width: 520px;">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <input type="text" name="first_name" class="form-control form-control-lg" placeholder="First Name" required>
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="last_name" class="form-control form-control-lg" placeholder="Last Name" required>
+    </div>
+  </div>
+  
+  <div class="mt-3">
+    <textarea name="message" class="form-control form-control-lg" rows="4" 
+              placeholder="Describe your problem" required></textarea>
+  </div>
+  
+  <div class="mt-3">
+    <input type="email" name="email" class="form-control form-control-lg" 
+           placeholder="Email" required>
+  </div>
+  
+  <div class="mt-3">
+    <input type="tel" name="phone" class="form-control form-control-lg" 
+           placeholder="+44 7400 123456" required>
+  </div>
+  
+  <div class="mt-3">
+    <select id="contactCountry" name="country" class="form-control form-control-lg" required>
+      <option value="">Select Country</option>
+    </select>
+  </div>
+  
+  <button type="submit" 
+          class="btn w-100 mt-3 py-2 fw-bold fs-5 text-white"
+          style="background: linear-gradient(90deg, #E85B77 0%, #FC8450 100%); 
+                 border: none; border-radius: 12px; font-size: 16px !important;">
+    SEND MESSAGE
+  </button>
+  
+  <p class="small text-center mt-4 text-muted">
+    By entering your personal information and clicking the button, you accept the 
+    <a href="privacy.html" class="text-dark text-decoration-underline">Privacy Policy</a> and 
+    <a href="conditions.html" class="text-dark text-decoration-underline">Terms of Use</a> 
+    of the website.
+  </p>
+</form>
         
         <div class="mt-5 pt-5">
           <p class="mb-2" style="font-size: 1.35rem; font-weight: 500;">If you have any further questions, please get in touch by email.</p>
